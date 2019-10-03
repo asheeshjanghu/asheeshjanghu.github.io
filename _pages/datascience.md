@@ -1,0 +1,11 @@
+---
+title: "Data Science"
+layout: tags
+permalink: /datascience/
+author_profile: false
+classes: wide
+sidebar:
+  nav: "Data Science"
+---
+- Machine Learning
+- Deep Learning
