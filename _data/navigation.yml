@@ -29,6 +29,12 @@ Data Science:
     children:
       - title: "Syntax"
         url: /docs/quick-start-guide/
+  - title: Math & Stats
+    children:
+      - title: "Math"
+        url: /docs/quick-start-guide/
+      - title: "Statistics"
+        url: /docs/quick-start-guide/
 
 Programming:
   - title: Python

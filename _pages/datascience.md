@@ -9,4 +9,4 @@ sidebar:
 - Machine Learning
 - Deep Learning
 - SQL
-- Data Visualization
+- Math & Stats
