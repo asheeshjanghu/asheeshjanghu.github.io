@@ -1,8 +1,6 @@
 ---
 title: "Data Structures @ HackerRank"
-layout: category
-permalink: /categories/hr-datastructures/
-taxonomy: hr-datastructures
+permalink: /hr-datastructures/
 author_profile: false
 classes: wide
 sidebar:
@@ -11,7 +9,7 @@ sidebar:
 
 [HackerRank Data Structures Track](https://www.hackerrank.com/domains/data-structures)
 
-- Arrays
+- [Arrays](/hr-datastructures/arrays/)
 - Linked Lists
 - Trees
 - Balanced Trees
