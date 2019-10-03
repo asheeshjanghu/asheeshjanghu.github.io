@@ -9,48 +9,40 @@ main:
     url: /studylog/
 
 Data Science:
-  - title: Data Science
+  - title: Machine Learning
     children:
-      - title: "Quick-Start Guide"
+      - title: "NumPy"
         url: /docs/quick-start-guide/
-      - title: "Structure"
+      - title: "Pandas"
+        url: /ml/pandas/
+      - title: "Scikit-learn"
         url: /docs/structure/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
+      - title: "Data Visualization"
+        url: /docs/structure/
+  - title: Deep Learning
+    children:
+      - title: "CNN"
+        url: /docs/quick-start-guide/
+      - title: "GAN"
+        url: /docs/structure/
+  - title: SQL
+    children:
+      - title: "Syntax"
+        url: /docs/quick-start-guide/
 
 Programming:
   - title: Python
     children:
-      - title: "Quick-Start Guide"
+      - title: "Syntax"
         url: /docs/quick-start-guide/
-      - title: "Structure"
-        url: /docs/structure/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
   - title: Algorithms
     children:
-      - title: "Quick-Start Guide"
-        url: /docs/quick-start-guide/
-      - title: "Structure"
-        url: /docs/structure/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
+      - title: "Hash"
+        url: /ml/hash/
   - title: Data Structures
     children:
-      - title: "Quick-Start Guide"
+      - title: "Queue"
         url: /docs/quick-start-guide/
-      - title: "Structure"
-        url: /docs/structure/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
   - title: ETC
     children:
       - title: "Github"

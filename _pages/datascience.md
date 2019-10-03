@@ -1,6 +1,5 @@
 ---
 title: "Data Science"
-layout: tags
 permalink: /datascience/
 author_profile: false
 classes: wide
