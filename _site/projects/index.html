@@ -95,7 +95,7 @@
 
   </head>
 
-  <body class="layout--posts wide">
+  <body class="layout--single wide">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -269,77 +269,81 @@
   </div>
 
 
-  <div class="archive">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Projects">
     
-      <h1 id="page-title" class="page__title">Projects</h1>
     
-    <h1 id="projects-by-me">Projects by me</h1>
+    
 
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Projects
+</h1>
+          
+        </header>
+      
 
-<ul class="taxonomy__index">
-  
-  
-    <li>
-      <a href="#2019">
-        <strong>2019</strong> <span class="taxonomy__count">2</span>
-      </a>
-    </li>
-  
+      <section class="page__content" itemprop="text">
+        
+        <p>This portfolio of data science is completed by me.
+All projects are written in Python.</p>
+
+<hr />
+
+<h3 id="handwritten-digit-recognizer"><a href="https://www.kaggle.com/rosiejh/digit-recognizer-with-cnn">Handwritten Digit Recognizer</a></h3>
+<p>A digit recognizer using image recognition methods in practice. This is a published Kaggle kernel with EDA, data visualization and convolutional neural networks(CNN). Score 99.56% achieved.</p>
+
+<h3 id="image-recognition"><a href="https://www.kaggle.com/rosiejh/cnn-with-keras-for-fashion-mnist">Image Recognition</a></h3>
+<p>MNIST dataset is good as a benchmark to validate my algorithms. From the images for 10 classes of fashion items, it predicts the class of input image. In Kaggle kernel, I used 3-layer CNN with Keras.</p>
+
+<h3 id="imdb-movie-reviews-sentiment-classification"><a href="https://github.com/rosiejh/rosiejh.github.io/blob/master/projects/MovieReview.ipynb">IMDB Movie Reviews Sentiment Classification</a></h3>
+<p>Dataset of 25,000 movies reviews from IMDB, labeled by sentiment. In this notebook, I’ll demonstrate to classify movie reviews into “positive” reviews and “negative” reviews, just based on the text content of the reviews. This notebook is inspired by the book “Deep Learning with Python”.</p>
+
+<h3 id="boston-housing-price-regression"><a href="https://github.com/rosiejh/rosiejh.github.io/blob/master/projects/BostonHousing.ipynb">Boston Housing Price Regression</a></h3>
+<p>Samples contain 13 attributes of houses at different locations around the Boston suburbs in the late 1970s and targets are the median values of the houses at a location (in k$). In this notebook, I used simple neural networks and K-fold validation for reliably evaluating a model as there is little data available.</p>
+
+<h3 id="clustering-for-unsupervised-classification"><a href="https://www.kaggle.com/rosiejh/clustering-with-k-means">Clustering for Unsupervised Classification</a></h3>
+<p>Clustering is grouping a set of objects for unsupervised classification. With seed dataset from UCI, I used K-Means which is one of clustering algorithms in order to classify the type of seeds from their features.</p>
+
+<h3 id="ml-classification-in-5-different-ways"><a href="https://github.com/rosiejh/rosiejh.github.io/blob/master/projects/Iris.ipynb">ML Classification in 5 Different Ways</a></h3>
+<p>With Iris dataset from UCI, I used traditional machine learning methods with some data visualization in this notebook. Logistic Regression, SVM, Decision Tree, Random Forest, k-NN classifiers are used.</p>
+
+<h3 id="home-credit-default-risk">Home Credit Default Risk</h3>
+<ul>
+  <li>Machine learning competition hosted on Kaggle.</li>
+  <li>To use historical loan application data to predict whether or not an applicant will be able to repay a loan.</li>
 </ul>
 
+<h3 id="titanic--machine-learning-from-disaster">Titanic : Machine Learning from Disaster</h3>
+<ul>
+  <li>The analysis of what sorts of people were likely to survive.</li>
+  <li>Apply the tools of machine learning to predict which passengers survived the tragedy.</li>
+</ul>
 
+        
+      </section>
 
-  <section id="2019" class="taxonomy__section">
-    <h2 class="archive__subtitle">2019</h2>
-    <div class="entries-list">
-      
+      <footer class="page__meta">
+        
         
 
 
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/etc/jekyll/" rel="permalink">Building github pages with Jekyll
-</a>
-      
-    </h2>
-    
-    <p class="archive__item-excerpt" itemprop="description">Algorithms Hash
-</p>
-  </article>
-</div>
-
-      
         
+      </footer>
 
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/ml/pandas/" rel="permalink">Pandas for Machine Learning
-</a>
-      
-    </h2>
-    
-    <p class="archive__item-excerpt" itemprop="description">pandas for machine learning
-</p>
-  </article>
-</div>
 
       
     </div>
-    <a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
-  </section>
 
+    
+  </article>
 
-  </div>
+  
+  
 </div>
+
     </div>
 
     

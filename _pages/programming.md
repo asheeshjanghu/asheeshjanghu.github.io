@@ -11,7 +11,7 @@ sidebar:
 python
 
 # Algorithms
-- [해시](/ml/hash) : Key-value쌍으로 데이터를 저장하는 자료구조
+- [해시](/ml/hash/) : Key-value쌍으로 데이터를 저장하는 자료구조
 - 스택/큐 : LIFO, FIFO, push&pop
 - 힙(Heap) : 특정한 규칙을 가지는 트리
 - 정렬
