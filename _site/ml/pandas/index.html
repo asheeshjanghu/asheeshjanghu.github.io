@@ -31,7 +31,7 @@
 
 
 
-  <meta property="article:published_time" content="2019-10-01T16:00:00+00:00">
+  <meta property="article:published_time" content="2019-10-02T16:00:00+00:00">
 
 
 
@@ -193,7 +193,7 @@
             
             
 
-            <li><a href="/docs/quick-start-guide/" class="">NumPy</a></li>
+            <li><a href="/ml/numpy/" class="">NumPy</a></li>
           
             
             
@@ -209,7 +209,7 @@
             
             
 
-            <li><a href="/docs/structure/" class="">Scikit-learn</a></li>
+            <li><a href="/ml/scikitlearn/" class="">Scikit-learn</a></li>
           
             
             
@@ -217,7 +217,7 @@
             
             
 
-            <li><a href="/docs/structure/" class="">Data Visualization</a></li>
+            <li><a href="/ml/datavisualization/" class="">Data Visualization</a></li>
           
         </ul>
         
@@ -309,7 +309,7 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Pandas for Machine Learning">
     <meta itemprop="description" content="pandas for machine learning">
-    <meta itemprop="datePublished" content="October 01, 2019">
+    <meta itemprop="datePublished" content="October 02, 2019">
     
 
     <div class="page__inner-wrap">
@@ -323,7 +323,229 @@
 
       <section class="page__content" itemprop="text">
         
-        
+        <p class="notice--warning"><strong>Pandas:</strong> Python에서 데이터처리를 위해 존재하는 가장 인기있는 라이브러리.
+2차원 데이터를 효율적으로 가공/처리할 수 있는 다양하고 훌륭한 기능을 제공</p>
+
+<h2 id="pandas의-핵심-객체--dataframe">Pandas의 핵심 객체 = DataFrame</h2>
+<ul>
+  <li>여러 개의 행과 열로 이뤄진 2차원 데이터를 담는 데이터 구조체</li>
+  <li>Index : 개별 데이터를 고유하게 식별하는 key값. Series, DataFrame은 모두 Index를 key값으로 가지고 있습니다.</li>
+  <li>Series : 열이 하나뿐인 데이터 구조체</li>
+  <li>DataFrame : 열이 여러개인 데이터 구조체. DataFrame은 여러개의 Series로 이뤄졌다고 할 수 있습니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+</code></pre></div></div>
+
+<h1 id="dataframe">DataFrame</h1>
+
+<h3 id="read_csv-">read_csv( )</h3>
+<p>파일 로딩하기</p>
+
+<ul>
+  <li>csv : 열을 콤마(,)로 구분</li>
+  <li>콤마 외에 다른 문자로 구분하려면 : read_csv(‘파일명’, sep=‘\t’)</li>
+  <li>read_table( ) : 열을 탭으로 구분 / read_fwf( ) : Fixed Width도 있지만, read_csv와 큰 차이 없으므로 read_csv( )를 주로 사용합니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'C:/Users/.../train.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../../assets/images/pandas1.png" alt="" /></p>
+
+<p>csv 파일을 로딩해 DataFrame 객체로 반환합니다. 별다른 파라미터 지정이 없으면 csv 파일의 첫번째 줄에 있던 문자열을 칼럼명으로 인지합니다.</p>
+
+<p>맨 왼쪽의 0,1,2,3,… 숫자들이 Pandas의 Index 값입니다. 모든 DataFrame 내의 데이터는 생성되는 순간 고유의 Index값을 가지게 됩니다.</p>
+
+<h1 id="explore-dataframe">Explore DataFrame</h1>
+
+<h3 id="dfheadn">df.head(N)</h3>
+<p>DataFrame의 맨 앞에 있는 N개의 행 표시하기 (아무것도 입력안하면 기본값 5개)</p>
+
+<h3 id="dfshape">df.shape</h3>
+<p>df 크기 알아보기. 행과 열을 tuple 형태로 반환.</p>
+
+<h3 id="dfinfo-">df.info( )</h3>
+<p>총 데이터 건수, 데이터 타입, Null 건수 등
+<img src="../../assets/images/pandas2.png" alt="" /></p>
+
+<h3 id="dfdescribe-">df.describe( )</h3>
+<ul>
+  <li>숫자형 데이터값의 분포도, 평균값, 최대값, 최소값 등</li>
+  <li>오직 숫자형 열만 조사. object 타입의 열은 자동으로 출력에서 제외시킴
+<img src="../../assets/images/pandas3.png" alt="" /></li>
+</ul>
+
+<h3 id="dfcolumnvalue_counts-">df[‘column’].value_counts( )</h3>
+<ul>
+  <li>해당 열 데이터값의 유형과 건수 확인하기</li>
+  <li>df[ ] 안에 열명 입력하면 Series 형태로 특정 열의 데이터셋이 반환됨</li>
+  <li>value_counts는 DataFrame 전체에는 적용 안되고 Series에만 적용됨. 그래서 df[ ] 이렇게 해당 열을 지정해줘야함</li>
+</ul>
+
+<h1 id="dataframe을-다른-형태로-상호-변환하기">DataFrame을 다른 형태로 상호 변환하기</h1>
+<h2 id="ndarray-리스트-딕셔너리--dataframe로-변환하기">ndarray, 리스트, 딕셔너리 → DataFrame로 변환하기</h2>
+<p>DataFrame은 column명을 가지고 있어서, DataFrame으로 변환시 이 column명을 지정해줘야 합니다. (미지정시 자동으로 column명을 할당)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">colname</span> <span class="o">=</span> <span class="p">[</span><span class="s">'col1'</span><span class="p">]</span>
+ 
+<span class="c"># 리스트를 이용해 DataFrame 생성 (columns인자로 column명 지정)</span>
+<span class="n">df_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="n">colname</span><span class="p">)</span>
+ 
+<span class="c"># NumPy ndarray를 이용해 DataFrame 생성</span>
+<span class="n">df_array</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="n">columns</span><span class="o">=</span><span class="n">colname</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../../assets/images/pandas4.png" alt="" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">colname</span> <span class="o">=</span> <span class="p">[</span><span class="s">'col1'</span><span class="p">,</span> <span class="s">'col2'</span><span class="p">,</span> <span class="s">'col3'</span><span class="p">]</span>
+ 
+<span class="n">df_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="n">colname</span><span class="p">)</span>
+<span class="n">df_array</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]]),</span> <span class="n">columns</span><span class="o">=</span><span class="n">colname</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../../assets/images/pandas5.png" alt="" /></p>
+
+<h3 id="딕셔너리를-dataframe으로-변환">딕셔너리를 DataFrame으로 변환</h3>
+<ul>
+  <li>key값은 column명으로, value값은 해당 column의 데이터로 변환됩니다.</li>
+  <li>key는 문자열로, value는 리스트나 ndarray 형태로 딕셔너리를 구성합니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">'col1'</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="s">'col2'</span><span class="p">:[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">22</span><span class="p">],</span> <span class="s">'col3'</span><span class="p">:[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">33</span><span class="p">]}</span>
+<span class="n">df_dict</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+</code></pre></div></div>
+<p><img src="../../assets/images/pandas6.png" alt="" /></p>
+
+<h2 id="dataframe--ndarray-리스트-딕셔너리로-변환하기">DataFrame → ndarray, 리스트, 딕셔너리로 변환하기</h2>
+
+<h3 id="dfvalues">df.values</h3>
+<p>DataFrame → ndarray</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span>
+ 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">arr</span>
+<span class="p">[[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
+ <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">]]</span>   <span class="c"># NumPy의 ndarray 타입으로 변환됨</span>
+</code></pre></div></div>
+
+<h3 id="dfvaluestolist-">df.values.tolist( )</h3>
+<p>DataFrame → 리스트</p>
+<ul>
+  <li>values로 얻은 ndarray에 tolist( ) 호출</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lis</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+ 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lis</span>
+<span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<h3 id="dfto_dictlist">df.to_dict(‘list’)</h3>
+<p>DataFrame → 딕셔너리</p>
+<ul>
+  <li>인자로 ‘list’ 입력하면 딕셔너리의 value값이 리스트형으로 반환</li>
+  <li>인자로 아무것도 입력안하면 value값이 딕셔너리</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">dict</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s">'list'</span><span class="p">)</span>
+ 
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">dict</span>
+<span class="p">{</span><span class="s">'col1'</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="s">'col2'</span><span class="p">:[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">22</span><span class="p">],</span> <span class="s">'col3'</span><span class="p">:[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">33</span><span class="p">]}</span>
+ 
+<span class="nb">dict</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+ 
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">dict</span>
+<span class="p">{</span><span class="s">'col1'</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">11</span><span class="p">},</span> <span class="s">'col2'</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">22</span><span class="p">},</span> <span class="s">'col3'</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">33</span><span class="p">}}</span>
+</code></pre></div></div>
+
+<h1 id="dataframe-생성-수정-삭제">DataFrame 생성, 수정, 삭제</h1>
+
+<h3 id="새로운-column-추가하기">새로운 column 추가하기</h3>
+
+<ul>
+  <li>새로운 series가 기존 DataFrame에 추가됨</li>
+  <li>Series에 상수값을 할당하면 모든 데이터값이 일괄적으로 적용됨</li>
+  <li>기존 column의 데이터를 이용해 새로운 series를 만들수도 있음</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'new'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">df</span><span class="p">[</span><span class="s">'age'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2019</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s">'born'</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s">'age_by_10'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'age'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
+</code></pre></div></div>
+
+<h3 id="기존의-column-데이터값-일괄-수정하기">기존의 column 데이터값 일괄 수정하기</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'age_by_10'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'age_by_10'</span><span class="p">]</span> <span class="o">+</span> <span class="mi">100</span>
+</code></pre></div></div>
+
+<h3 id="dataframe-데이터-삭제하기">DataFrame 데이터 삭제하기</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+ 
+<span class="c"># 'name, age, address' column이 삭제된 df를 반환</span>
+<span class="n">drop_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'age'</span><span class="p">,</span> <span class="s">'address'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>labels : 삭제 원하는 행의 인덱스값 or column명 입력</li>
+  <li>axis : axis=0 행 삭제, axis=1 열 삭제</li>
+  <li>inplace
+    <ul>
+      <li>기본값 False → 원래 DataFrame은 그대로 유지하고, drop된 DataFrame을 새로운 객체변수로 반환</li>
+      <li>inplace=True → 원래 DataFrame의 데이터를 삭제하고 drop된 결과를 새롭게 적용. 반환되는 값은 None</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="index-객체">Index 객체</h1>
+
+<h3 id="dfindex">df.index</h3>
+<p>Index 객체값 확인하기</p>
+<h3 id="dfindexvalues">df.index.values</h3>
+<p>Index 객체의 ndarray 값 확인하기</p>
+<h3 id="dfreset_index-">df.reset_index( )</h3>
+<p>새롭게 인덱스를 연속 숫자형으로 할당. 기존 인덱스는 ‘index’라는 새로운 column명으로 추가합니다.</p>
+
+<p class="notice--info">Parameter값으로 drop=True 설정하면 기존 인덱스가 새로운 칼럼으로 추가되지 않고 삭제됨</p>
+
+<h1 id="data-selection--filtering">Data Selection &amp; Filtering</h1>
+
+<h3 id="--연산자">[ ] 연산자</h3>
+
+<ul>
+  <li>DataFrame 뒤의 [ ]에 칼럼을 지정해 칼럼 지정 연산에 사용
+    <ul>
+      <li>ex) df[‘age’]</li>
+    </ul>
+  </li>
+  <li>Index 형태로 변환가능한 표현식 (슬라이싱 or Boolean 인덱싱) 은 [ ]내에 입력 가능.
+    <ul>
+      <li>df[ 0:2 ] : 첫 2개 데이터 행을 추출 → 가능은 하지만 이렇게 슬라이싱해서 데이터 추출하는 방식은 비추!</li>
+      <li>df[ df[‘age’] == 30 ] : age열 값이 30인 데이터만 추출</li>
+    </ul>
+  </li>
+</ul>
+
+<p class="notice--danger">DataFrame[ ]에는 칼럼 지정 or Boolean 인덱싱으로만 사용할 것 !!!</p>
+
+<h3 id="ix--연산자">ix[ ] 연산자</h3>
+<p>ix[행, 열] like ix[0, ‘age’] = 0번째 행 + ‘age’열에 해당하는 데이터값 추출</p>
+
+<ul>
+  <li>행 : 행의 index값</li>
+  <li>열 : 칼럼명 or 칼럼 index값</li>
+</ul>
+
+<p class="notice--danger"><strong>주의:</strong> 칼럼명과 칼럼의 index값 두개가 혼용되어 ix 연산자는 곧 사라지고, loc[ ]과 iloc[ ]으로 나뉘어짐</p>
+
+<h3 id="iloc--연산자--칼럼-위치position-기반-인덱싱">iloc[ ] 연산자 : 칼럼 위치(position) 기반 인덱싱</h3>
+<p>행,열 값으로 int or 슬라이싱 or 팬시리스트를 입력해야 함</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>   <span class="c"># 1번째 행, 1번째 열 값</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s">'Name'</span><span class="p">]</span>   <span class="c"># 오류발생</span>
+</code></pre></div></div>
+
+<h3 id="loc--연산자--칼럼명label-기반-인덱싱">loc[ ] 연산자 : 칼럼명(label) 기반 인덱싱</h3>
+
 
         
       </section>
@@ -380,7 +602,7 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-10-01T16:00:00+00:00">October 01, 2019</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-10-02T16:00:00+00:00">October 02, 2019</time></p>
         
       </footer>
 
@@ -389,11 +611,11 @@
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Previous</a>
+      <a href="/etc/jekyll/" class="pagination--pager" title="Hosting on GitHub pages with Jekyll
+">Previous</a>
     
     
-      <a href="/etc/jekyll/" class="pagination--pager" title="Building github pages with Jekyll
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -417,12 +639,52 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/etc/jekyll/" rel="permalink">Building github pages with Jekyll
+        <a href="/etc/jekyll/" rel="permalink">Hosting on GitHub pages with Jekyll
 </a>
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">Algorithms Hash
+    <p class="archive__item-excerpt" itemprop="description">How to host on github pages with jekyll using minimal mistakes theme
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/ml/scikitlearn/" rel="permalink">Scikit-learn for Machine Learning
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">scikit-learn for machine learning
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/ml/numpy/" rel="permalink">NumPy for Machine Learning
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">numpy for machine learning
 </p>
   </article>
 </div>

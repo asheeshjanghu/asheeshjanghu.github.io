@@ -4,7 +4,7 @@ author_profile: true
 classes: wide
 ---
 
-Hi there, this is my personal blog of `Data Science`. I’m a former accountant who have found real passion and strength in data science. Here I share my own curriculum covering from the basics of computer science to the state-of-the-art machine learning techniques. Below are the materials I used to teach myself and make tutorials. Tutorials are available above.
+Hi there, I'm a data scientist and this is my personal blog about `Data Science`. I’m a former accountant who have found real passion and strength in data science and I've taught myself to become a data scientist without any related degrees. Here I share my own curriculum covering from the basics of computer science to the state-of-the-art machine learning techniques. Below are the materials I used to learn. Tutorials are available above.
 
 ## How I’ve taught myself
 

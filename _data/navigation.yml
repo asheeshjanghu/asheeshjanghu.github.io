@@ -12,13 +12,13 @@ Data Science:
   - title: Machine Learning
     children:
       - title: "NumPy"
-        url: /docs/quick-start-guide/
+        url: /ml/numpy/
       - title: "Pandas"
         url: /ml/pandas/
       - title: "Scikit-learn"
-        url: /docs/structure/
+        url: /ml/scikitlearn/
       - title: "Data Visualization"
-        url: /docs/structure/
+        url: /ml/datavisualization/
   - title: Deep Learning
     children:
       - title: "CNN"
@@ -47,8 +47,8 @@ Programming:
         url: /ml/hash/
   - title: Data Structures
     children:
-      - title: "Queue"
-        url: /docs/quick-start-guide/
+      - title: "HackerRank"
+        url: /hr-datastructures/
   - title: ETC
     children:
       - title: "Github"
