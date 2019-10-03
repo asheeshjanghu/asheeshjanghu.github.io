@@ -54,4 +54,4 @@ Programming:
   - title: ETC
     children:
       - title: "Github"
-        url: /docs/quick-start-guide/
+        url: /etc/jekyll/

@@ -4,7 +4,7 @@ description: Hi, I'm a data scientist and this is my personal blog about Data Sc
 github_username: rosiejh
 minimal_mistakes_skin: default
 search: true
-logo: "/assets/images/star.ico"
+logo: "/assets/images/heart.ico"
 
 # Build settings
 markdown: kramdown
@@ -29,7 +29,7 @@ plugins:
 author:
   name   : "Rosie Yang"
   avatar : "/assets/images/rosie.jpg"
-  bio    : "Hi, I'm a data scientist."
+  bio    : "ML enthusiast👩🏻‍💻\nDancer💃\nExplorer🌏"
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
