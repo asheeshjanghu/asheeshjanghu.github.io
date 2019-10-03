@@ -4,7 +4,7 @@ description: Hi, I'm a data scientist and this is my personal blog about Data Sc
 github_username: rosiejh
 minimal_mistakes_skin: default
 search: true
-logo: "/assets/images/heart.ico"
+logo: "/assets/images/star.ico"
 
 # Build settings
 markdown: kramdown
