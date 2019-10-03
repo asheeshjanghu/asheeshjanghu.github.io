@@ -1,6 +1,6 @@
 var store = [{
-        "title": "Pandas",
-        "excerpt":" ","categories": [],
-        "tags": [],
-        "url": "http://localhost:4000/pandas/",
+        "title": "Pandas for Machine Learning",
+        "excerpt":" ","categories": ["ml"],
+        "tags": ["datascience","machinelearning","pandas"],
+        "url": "http://localhost:4000/ml/pandas/",
         "teaser":null}]

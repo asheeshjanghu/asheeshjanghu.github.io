@@ -29,7 +29,9 @@ plugins:
 author:
   name   : "Rosie Yang"
   avatar : "/assets/images/rosie.jpg"
-  bio    : "ML enthusiast👩🏻‍💻\nDancer💃\nExplorer🌏"
+  bio    : "ML enthusiast👩🏻‍💻\n
+  Dancer💃
+  Explorer🌏"
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"

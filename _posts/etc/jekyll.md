@@ -1,7 +1,7 @@
 ---
-title: "Building Github Pages with Jekyll"
+title: "Jekyll"
 date: 2019-10-03T15:34:30-04:00
-categories: ml
+categories: etc
 tags: [programming, algorithms, datastructures]
 excerpt: "Algorithms Hash"
 classes: wide
