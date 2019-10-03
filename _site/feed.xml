@@ -1,1 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-03T03:54:23+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rosie’s Devblog</title><subtitle>Hi, I'm a data scientist and this is my personal blog about Data Science.</subtitle><author><name>Rosie Yang</name></author><entry><title type="html">Pandas for Machine Learning</title><link href="http://localhost:4000/ml/pandas/" rel="alternate" type="text/html" title="Pandas for Machine Learning" /><published>2019-10-01T16:00:00+00:00</published><updated>2019-10-01T16:00:00+00:00</updated><id>http://localhost:4000/ml/pandas</id><content type="html" xml:base="http://localhost:4000/ml/pandas/"></content><author><name>Rosie Yang</name></author><category term="datascience" /><category term="machinelearning" /><category term="pandas" /><summary type="html">pandas for machine learning</summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-03T04:00:11+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rosie’s Devblog</title><subtitle>Hi, I'm a data scientist and this is my personal blog about Data Science.</subtitle><author><name>Rosie Yang</name></author><entry><title type="html">Jekyll</title><link href="http://localhost:4000/etc/jekyll/" rel="alternate" type="text/html" title="Jekyll" /><published>2019-10-01T19:34:30+00:00</published><updated>2019-10-01T19:34:30+00:00</updated><id>http://localhost:4000/etc/jekyll</id><content type="html" xml:base="http://localhost:4000/etc/jekyll/">&lt;p&gt;마음에 드는 jekyll theme을 선택하고 터미널에서&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll bundler
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이렇게 했는데 자꾸 permission 관련 에러가 떠서&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gem install jekyll bundler
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;으로 bundler 설치한후에, theme 다운받은 폴더로 이동해서&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;실행하면 &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:4000&lt;/code&gt;에서 서브된다.&lt;/p&gt;
+
+&lt;p&gt;로컬에서 변경사항 확인한 후에 github에 push&lt;/p&gt;</content><author><name>Rosie Yang</name></author><category term="programming" /><category term="algorithms" /><category term="datastructures" /><summary type="html">Algorithms Hash</summary></entry><entry><title type="html">Pandas for Machine Learning</title><link href="http://localhost:4000/ml/pandas/" rel="alternate" type="text/html" title="Pandas for Machine Learning" /><published>2019-10-01T16:00:00+00:00</published><updated>2019-10-01T16:00:00+00:00</updated><id>http://localhost:4000/ml/pandas</id><content type="html" xml:base="http://localhost:4000/ml/pandas/"></content><author><name>Rosie Yang</name></author><category term="datascience" /><category term="machinelearning" /><category term="pandas" /><summary type="html">pandas for machine learning</summary></entry></feed>
