@@ -10,7 +10,9 @@ main:
 
 Data Science:
   - title: Machine Learning
-    children:
+    children:     
+      - title: "Intro to ML"
+        url: /ml/introml/
       - title: "NumPy"
         url: /ml/numpy/
       - title: "Pandas"
