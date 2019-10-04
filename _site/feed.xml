@@ -1,4 +1,219 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-03T07:38:20+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rosie’s Devblog</title><subtitle>Hi, I'm a data scientist and this is my personal blog about Data Science.</subtitle><author><name>Rosie Yang</name></author><entry><title type="html">Pandas for Machine Learning</title><link href="http://localhost:4000/ml/pandas/" rel="alternate" type="text/html" title="Pandas for Machine Learning" /><published>2019-10-02T16:00:00+00:00</published><updated>2019-10-02T16:00:00+00:00</updated><id>http://localhost:4000/ml/pandas</id><content type="html" xml:base="http://localhost:4000/ml/pandas/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;Pandas:&lt;/strong&gt; Python에서 데이터처리를 위해 존재하는 가장 인기있는 라이브러리.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-04T05:14:48+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rosie’s Devblog</title><subtitle>Hi, I'm a data scientist and this is my personal blog about Data Science.</subtitle><author><name>Rosie Yang</name></author><entry><title type="html">Hash</title><link href="http://localhost:4000/algorithms/hash/" rel="alternate" type="text/html" title="Hash" /><published>2019-10-03T19:34:30+00:00</published><updated>2019-10-03T19:34:30+00:00</updated><id>http://localhost:4000/algorithms/hash</id><content type="html" xml:base="http://localhost:4000/algorithms/hash/">&lt;h1 id=&quot;해시&quot;&gt;해시&lt;/h1&gt;
+
+&lt;h2 id=&quot;중복원소-찾기&quot;&gt;중복원소 찾기&lt;/h2&gt;
+
+&lt;p&gt;A = [a, b, c, a]
+B = [b, c, a]&lt;/p&gt;
+
+&lt;p&gt;A엔 있고 B엔 없는 원소 찾아내기 or A원소 중 B에 있는건 빼기 (중복원소 허용.ex)A에 1이 2개있고 B엔 1개만 - 1개만빼줌)&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Counter(A)&lt;/code&gt; = Counter({a: 2, b: 1, c: 1})&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Counter(B)&lt;/code&gt; = Counter({b: 1, c: 1, a: 1})&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;answer&lt;/code&gt; = Counter(A) - Counter(B) = Counter({a: 1})&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;answer.keys()&lt;/code&gt; = dict_keys([a])&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;list(answer.keys())[0]&lt;/code&gt; = a&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2nd&quot;&gt;2nd&lt;/h2&gt;
+
+&lt;p&gt;a = 119
+b = 97 674 223
+c = 11 9552 4421
+한 번호가 다른 번호의 접두어인 경우가 있는지 찾기. a는 c의 접두사.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def solution(phone_book):
+    phonebook = sorted(phone_book)
+
+    for p1, p2 in zip(phonebook, phonebook[1:]):
+        if p2.startswith(p1):
+            return True
+    return False
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;phone_book&lt;/code&gt; = [‘119’, ‘97674223’, ‘1195524421’]&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;phonebook&lt;/code&gt; = sorted(phone_book) = [‘119’, ‘1195524421’, ‘97674223’]&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zip(phonebook, phonebook[1:])&lt;/code&gt; = [(‘119’, ‘1195524421’), (‘1195524421’, ‘97674223’)]
+    &lt;ul&gt;
+      &lt;li&gt;zip([a, b, c], [e, f]) = [(a, e), (b, f)]&lt;/li&gt;
+      &lt;li&gt;zip([a, b, c, d], [b, c, d]) = [(a, b), (b, c), (c, d)]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;a = “Hello World”&lt;/li&gt;
+      &lt;li&gt;a.startswith(“Hello”) -&amp;gt; True&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Rosie Yang</name></author><category term="programming" /><category term="algorithms" /><category term="datastructures" /><summary type="html">Algorithms Hash</summary></entry><entry><title type="html">Arrays</title><link href="http://localhost:4000/hr-datastructures/arrays/" rel="alternate" type="text/html" title="Arrays" /><published>2019-10-03T19:34:30+00:00</published><updated>2019-10-03T19:34:30+00:00</updated><id>http://localhost:4000/hr-datastructures/arrays</id><content type="html" xml:base="http://localhost:4000/hr-datastructures/arrays/">&lt;h1 id=&quot;문제-리스트&quot;&gt;&lt;a href=&quot;https://www.hackerrank.com/domains/data-structures?filters%5Bsubdomains%5D%5B%5D=arrays&quot;&gt;문제 리스트&lt;/a&gt;&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.hackerrank.com/challenges/arrays-ds/problem&quot;&gt;Arrays&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.hackerrank.com/challenges/2d-array/problem&quot;&gt;2D Array&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.hackerrank.com/challenges/dynamic-array/problem&quot;&gt;Dynamic Array&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.hackerrank.com/challenges/array-left-rotation/problem&quot;&gt;Left Rotation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.hackerrank.com/challenges/sparse-arrays/problem&quot;&gt;Sparse Arrays&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.hackerrank.com/challenges/crush/problem&quot;&gt;Array Manipulation&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;arrays&quot;&gt;Arrays&lt;/h1&gt;</content><author><name>Rosie Yang</name></author><category term="programming" /><category term="algorithms" /><category term="datastructures" /><category term="arrays" /><summary type="html">Array Data structures</summary></entry><entry><title type="html">Data Visualization</title><link href="http://localhost:4000/ml/datavisualization/" rel="alternate" type="text/html" title="Data Visualization" /><published>2019-10-03T16:00:00+00:00</published><updated>2019-10-03T16:00:00+00:00</updated><id>http://localhost:4000/ml/datavisualization</id><content type="html" xml:base="http://localhost:4000/ml/datavisualization/">&lt;h1 id=&quot;matplotlib&quot;&gt;Matplotlib&lt;/h1&gt;
+
+&lt;p&gt;Matplotlib is a 2D plotting library for the Python and its numerical mathematics extension NumPy. I highly recommend to install Matplotlib using &lt;strong&gt;Anaconda&lt;/strong&gt;. &lt;a href=&quot;https://matplotlib.org&quot;&gt;https://matplotlib.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;importing-matplotlib&quot;&gt;Importing Matplotlib&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import matplotlib.pyplot as plt
+%matplotlib inline
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%matplotlib inline&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;plotting 결과를 code셀 바로 밑에 출력&lt;/li&gt;
+      &lt;li&gt;그래프를 notebook 안에 포함되게 하는 magic function!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;generating-plot&quot;&gt;Generating plot&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.plot()  # 기본 Line plot 생성
+** ADD EXTRA HERE **
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Add a title
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.title('Title')
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add labels
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.xlabel('x', fontsize=14, color='red')  # x축 (fontsize, color 추가가능)
+plt.ylabel('y')  # y축
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add a legend
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.legend()  # 범례추가
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;x,y축의 min값, max값 정하기
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.axis([0, 10, 0, 20])  # x축은 0~10, y축은 0~20
+--- or ---
+plt.xlim(0, 10)  # x축의 왼쪽은 0, 오른쪽은 10 (반대도 가능)
+plt.ylim(0, 20)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Grid
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.grid(b=?, which='?', axis='?') 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;b : True/False/None (grid 보일지말지)&lt;/li&gt;
+      &lt;li&gt;which : major/minor/both (grid를 어떤 변화에 적용할지)&lt;/li&gt;
+      &lt;li&gt;axis : both/x/y (grid를 어디축에 적용할지)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tick
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.xticks(ticks=[?], labels=[?])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;ticks : 표시할 ticks 위치가 담긴 list&lt;/li&gt;
+      &lt;li&gt;labels : 각 tick의 라벨 담긴 list&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;plot-종류&quot;&gt;Plot 종류&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt;안에 삽입할 args 목록&lt;/strong&gt; - plot제목 클릭하기&lt;/p&gt;
+
+&lt;h3 id=&quot;scatter-plot&quot;&gt;&lt;a href=&quot;https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html&quot;&gt;Scatter plot&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.scatter()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://matplotlib.org/_images/sphx_glr_scatter_demo2_001.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;histogram&quot;&gt;&lt;a href=&quot;https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hist.html&quot;&gt;Histogram&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.hist()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://matplotlib.org/_images/sphx_glr_histogram_features_001.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;image&quot;&gt;&lt;a href=&quot;https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html&quot;&gt;Image&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.imshow()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://matplotlib.org/_images/sphx_glr_image_demo_003.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;box-plot&quot;&gt;&lt;a href=&quot;https://matplotlib.org/api/_as_gen/matplotlib.pyplot.boxplot.html&quot;&gt;Box plot&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.boxplot()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://matplotlib.org/_images/sphx_glr_boxplot_color_001.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bar-chart&quot;&gt;&lt;a href=&quot;https://matplotlib.org/api/_as_gen/matplotlib.pyplot.bar.html&quot;&gt;Bar chart&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.bar()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://matplotlib.org/_images/sphx_glr_barchart_001.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;pie-chart&quot;&gt;&lt;a href=&quot;https://matplotlib.org/api/_as_gen/matplotlib.pyplot.pie.html&quot;&gt;Pie chart&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.pie()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://matplotlib.org/_images/sphx_glr_pie_features_001.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;formatting-the-style-of-plot&quot;&gt;Formatting the style of plot&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;plotting style : 3rd argument = color &amp;amp; line type
+    &lt;ul&gt;
+      &lt;li&gt;color : &lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt; red, &lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt; green, &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt; blue&lt;/li&gt;
+      &lt;li&gt;line : &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; solid, &lt;code class=&quot;highlighter-rouge&quot;&gt;--&lt;/code&gt; dashes, &lt;code class=&quot;highlighter-rouge&quot;&gt;-.&lt;/code&gt; dashdotted, &lt;code class=&quot;highlighter-rouge&quot;&gt;:&lt;/code&gt; dotted&lt;/li&gt;
+      &lt;li&gt;marker : &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; point, &lt;code class=&quot;highlighter-rouge&quot;&gt;o&lt;/code&gt; circle, &lt;code class=&quot;highlighter-rouge&quot;&gt;s&lt;/code&gt; square, &lt;code class=&quot;highlighter-rouge&quot;&gt;^&lt;/code&gt; triangle, &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; star, &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; plus, &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; x, &lt;code class=&quot;highlighter-rouge&quot;&gt;D&lt;/code&gt; diamond&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.plot(t, t, 'r--', t, t**2, 'bs', t, t**3, 'g^')
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://matplotlib.org/_images/sphx_glr_pyplot_004.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;plotting-with-categorical-variables&quot;&gt;Plotting with categorical variables&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;plt.figure&lt;/code&gt; : 새로운 figure 생성
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;figsize&lt;/code&gt; : width, height (in inches)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;plt.subplot&lt;/code&gt; : 현재 figure에 subplot 추가
+    &lt;ul&gt;
+      &lt;li&gt;*args : 3자리 숫자 - row갯수, column갯수, index(1부터 시작)&lt;/li&gt;
+      &lt;li&gt;sharex, sharey : x축,y축을 subplot들끼리 공유 - 각각 x,y축을 갖는게 아니라 하나의 x or y축만 표시됨&lt;/li&gt;
+      &lt;li&gt;label : 각 subplot의 title&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plt.figure(figsize=(9, 3))  # 가로 9인치 * 세로 3인치의 figure 생성
+
+plt.subplot(131)  # row엔 1개, col엔 3개의 subplot중 1번째 subplot
+plt.bar(names, values)
+plt.subplot(132)  # 2번째 subplot
+plt.scatter(names, values)
+plt.subplot(133)  # 3번째 subplot
+plt.plot(names, values)
+
+plt.suptitle('Categorical Plotting')  # Centered title
+plt.show() 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://matplotlib.org/_images/sphx_glr_pyplot_006.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Unpack the axes arrays
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;f, (ax1, ax2) = plt.subplots(1, 2, sharey=True)
+f.suptitle('Sharing Y axis')
+ax1.plot(x, y)
+ax2.scatter(x, y)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;&lt;img src=&quot;https://matplotlib.org/_images/sphx_glr_subplots_demo_003.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Rosie Yang</name></author><category term="datascience" /><category term="machinelearning" /><category term="datavisualization" /><category term="matplotlib" /><category term="seaborn" /><summary type="html">Data visualization for machine learning</summary></entry><entry><title type="html">Pandas for Machine Learning</title><link href="http://localhost:4000/ml/pandas/" rel="alternate" type="text/html" title="Pandas for Machine Learning" /><published>2019-10-02T16:00:00+00:00</published><updated>2019-10-02T16:00:00+00:00</updated><id>http://localhost:4000/ml/pandas</id><content type="html" xml:base="http://localhost:4000/ml/pandas/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;Pandas:&lt;/strong&gt; Python에서 데이터처리를 위해 존재하는 가장 인기있는 라이브러리.
 2차원 데이터를 효율적으로 가공/처리할 수 있는 다양하고 훌륭한 기능을 제공&lt;/p&gt;
 
 &lt;h2 id=&quot;pandas의-핵심-객체--dataframe&quot;&gt;Pandas의 핵심 객체 = DataFrame&lt;/h2&gt;
@@ -175,8 +390,10 @@
 
 &lt;h3 id=&quot;dfindex&quot;&gt;df.index&lt;/h3&gt;
 &lt;p&gt;Index 객체값 확인하기&lt;/p&gt;
+
 &lt;h3 id=&quot;dfindexvalues&quot;&gt;df.index.values&lt;/h3&gt;
 &lt;p&gt;Index 객체의 ndarray 값 확인하기&lt;/p&gt;
+
 &lt;h3 id=&quot;dfreset_index-&quot;&gt;df.reset_index( )&lt;/h3&gt;
 &lt;p&gt;새롭게 인덱스를 연속 숫자형으로 할당. 기존 인덱스는 ‘index’라는 새로운 column명으로 추가합니다.&lt;/p&gt;
 
@@ -194,8 +411,8 @@
   &lt;/li&gt;
   &lt;li&gt;Index 형태로 변환가능한 표현식 (슬라이싱 or Boolean 인덱싱) 은 [ ]내에 입력 가능.
     &lt;ul&gt;
-      &lt;li&gt;df[ 0:2 ] : 첫 2개 데이터 행을 추출 → 가능은 하지만 이렇게 슬라이싱해서 데이터 추출하는 방식은 비추!&lt;/li&gt;
-      &lt;li&gt;df[ df[‘age’] == 30 ] : age열 값이 30인 데이터만 추출&lt;/li&gt;
+      &lt;li&gt;df[0:2] : 첫 2개 데이터 행을 추출 → 가능은 하지만 이렇게 슬라이싱해서 데이터 추출하는 방식은 비추!&lt;/li&gt;
+      &lt;li&gt;df[df[‘age’] == 30] : age열 값이 30인 데이터만 추출&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -203,23 +420,359 @@
 &lt;p class=&quot;notice--danger&quot;&gt;DataFrame[ ]에는 칼럼 지정 or Boolean 인덱싱으로만 사용할 것 !!!&lt;/p&gt;
 
 &lt;h3 id=&quot;ix--연산자&quot;&gt;ix[ ] 연산자&lt;/h3&gt;
-&lt;p&gt;ix[행, 열] like ix[0, ‘age’] = 0번째 행 + ‘age’열에 해당하는 데이터값 추출&lt;/p&gt;
+&lt;p&gt;ix[행, 열] like ix[0, ‘age’] → 0번째 행 + ‘age’열에 해당하는 데이터값 추출&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;행 : 행의 index값&lt;/li&gt;
+  &lt;li&gt;행 : 행의 index값 (index가 숫자형일 경우 명칭 기반)&lt;/li&gt;
   &lt;li&gt;열 : 칼럼명 or 칼럼 index값&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;주의:&lt;/strong&gt; 칼럼명과 칼럼의 index값 두개가 혼용되어 ix 연산자는 곧 사라지고, loc[ ]과 iloc[ ]으로 나뉘어짐&lt;/p&gt;
+&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;주의:&lt;/strong&gt; 칼럼명과 칼럼의 index값 두개가 혼용되어 ix 연산자는 곧 사라지고, loc[ ]과 iloc[ ]으로 나뉘어짐. 혼동을 줄이기 위해 loc[ ], iloc[ ] 중 하나만 사용하는 것이 좋음. (내생각: 되도록이면 loc[ ]으로 통일하는게 깔끔해보임)&lt;/p&gt;
 
-&lt;h3 id=&quot;iloc--연산자--칼럼-위치position-기반-인덱싱&quot;&gt;iloc[ ] 연산자 : 칼럼 위치(position) 기반 인덱싱&lt;/h3&gt;
-&lt;p&gt;행,열 값으로 int or 슬라이싱 or 팬시리스트를 입력해야 함&lt;/p&gt;
+&lt;h3 id=&quot;iloc--연산자--칼럼-위치position-기반-인덱싱&quot;&gt;iloc[ ] 연산자 : 칼럼 &lt;em&gt;위치&lt;/em&gt;(position) 기반 인덱싱&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;행,열의 위치 좌표로 데이터에 접근&lt;/li&gt;
+  &lt;li&gt;행,열 값으로 &lt;strong&gt;int&lt;/strong&gt; or 슬라이싱 or 팬시리스트를 입력&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 1번째 행, 1번째 열 값&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 오류발생&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 1,2번째 행, 1번째 열 값 (0:2는 0,1만 포함)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;loc--연산자--칼럼명label-기반-인덱싱&quot;&gt;loc[ ] 연산자 : 칼럼명(label) 기반 인덱싱&lt;/h3&gt;</content><author><name>Rosie Yang</name></author><category term="datascience" /><category term="machinelearning" /><category term="pandas" /><summary type="html">pandas for machine learning</summary></entry><entry><title type="html">Hosting on GitHub pages with Jekyll</title><link href="http://localhost:4000/etc/jekyll/" rel="alternate" type="text/html" title="Hosting on GitHub pages with Jekyll" /><published>2019-10-01T19:34:30+00:00</published><updated>2019-10-01T19:34:30+00:00</updated><id>http://localhost:4000/etc/jekyll</id><content type="html" xml:base="http://localhost:4000/etc/jekyll/">&lt;p&gt;마음에 드는 jekyll theme을 선택하고 터미널에서&lt;/p&gt;
+&lt;h3 id=&quot;loc--연산자--칼럼-명칭label-기반-인덱싱&quot;&gt;loc[ ] 연산자 : 칼럼 &lt;em&gt;명칭&lt;/em&gt;(label) 기반 인덱싱&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;DataFrame의 index나 칼럼명으로 데이터에 접근&lt;/li&gt;
+  &lt;li&gt;행에는 &lt;strong&gt;index&lt;/strong&gt;값을, 열에는 &lt;strong&gt;칼럼명&lt;/strong&gt;을 입력&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'one'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# index값이 'one'인 행의 'Name'열 값&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# index가 숫자형인 경우&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 1,2번째 행의 'Name'열 값 (1:2는 1,2 모두 포함)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;주의:&lt;/strong&gt; loc[ ]에서 슬라이싱은 ‘시작값부터 종료값-1’ 까지가 아니라 ‘시작값부터 종료값’까지임! 명칭을 기반으로 인덱싱을 하는데 명칭은 숫자형이 아닐 수도 있어서 -1을 할 수 없기 때문.&lt;/p&gt;
+
+&lt;h3 id=&quot;boolean-indexing&quot;&gt;Boolean Indexing&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;원하는 데이터의 조건을 ix[ ] 내에 입력하면 자동으로 원하는 값을 필터링&lt;/li&gt;
+  &lt;li&gt;[ ], ix[ ], loc[ ]에서 공통으로 지원
+    &lt;ul&gt;
+      &lt;li&gt;iloc[ ]는 정수형만 지원하기 때문에 Boolean 인덱싱 X&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;and 조건 : &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&lt;/code&gt;, or 조건 : &lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt;, Not 조건 : &lt;code class=&quot;highlighter-rouge&quot;&gt;~&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 30세 이상인 사람을 모두 반환&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 30세 이상인 사람의 '이름, 나이'만 추출&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# loc 이용&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Sex'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'female'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 30세 이상인 여자만&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;정렬&quot;&gt;정렬&lt;/h1&gt;
+
+&lt;h3 id=&quot;sort_valuesby-ascending-inplace&quot;&gt;sort_values(by, ascending, inplace)&lt;/h3&gt;
+&lt;p&gt;DataFrame과 Series의 정렬&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;by='칼럼명'&lt;/code&gt; : 해당 칼럼으로 정렬&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ascending=True&lt;/code&gt; (기본값) : 오름차순, &lt;code class=&quot;highlighter-rouge&quot;&gt;ascending=False&lt;/code&gt; : 내림차순&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;inplace=False&lt;/code&gt; (기본값) : 원본 데이터는 그대로 유지, 정렬된 DataFrame을 반환&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;aggregation-함수&quot;&gt;Aggregation 함수&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;min( )&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;max( )&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;sum( )&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;count( )&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;mean( )&lt;/code&gt; 등등&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DataFrame에서 aggregation 호출할 경우 모든 칼럼에 해당 함수를 적용
+    &lt;ul&gt;
+      &lt;li&gt;ex) &lt;code class=&quot;highlighter-rouge&quot;&gt;df.count( )&lt;/code&gt;하면 모든 열 각각의 count를 반환&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;특정 칼럼에 함수 적용하려면 &lt;code class=&quot;highlighter-rouge&quot;&gt;df[['A열', 'B열']].max( )&lt;/code&gt;처럼 대상 칼럼들만 추출&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;groupby-&quot;&gt;groupby( )&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;by='칼럼명'&lt;/code&gt; : 해당 칼럼으로 groupby&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Sex'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 남녀 구분해 'Sex' 칼럼 제외한 나머지 모든 칼럼에 count적용&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Sex'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 남녀 구분해 Name, Age 칼럼에만 count적용&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Sex&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Name&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;male&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;257&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;257&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;female&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;261&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;261&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Sex'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;agg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 남녀 구분해 나이의 max, min값 반환&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Sex&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;max&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;min&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;male&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;70&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;15&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;female&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;75&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;agg_format&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'max'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Amount'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'sum'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Salary'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mean'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Sex'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;agg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;agg_format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 여러개의 칼럼에 서로 다른 agg함수를 쓸 경우&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Sex&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Age&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Amount&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Salary&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;male&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;70&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;482&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5271.23&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;female&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;75&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;469&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5086.01&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;결손-데이터-처리하기&quot;&gt;결손 데이터 처리하기&lt;/h1&gt;
+&lt;p&gt;칼럼에 값이 없는 Null인 경우. NumPy의 NaN으로 표시&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;머신러닝 알고리즘은 이 NaN 값을 처리하지 않으므로 NaN값을 다른 값으로 대체해야함&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;isna-&quot;&gt;isna( )&lt;/h3&gt;
+&lt;p&gt;NaN 여부 확인&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isna&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# NaN이면 True, 아니면 False&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Sex&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Name&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Age&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Amount&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Salary&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;False&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;False&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;True&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;True&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;False&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;False&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;True&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;False&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;True&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;False&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;False&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;False&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;False&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isna&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# NaN 개수 구하기&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Sex&lt;/span&gt;     &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;    &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Age&lt;/span&gt;     &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Amount&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Salary&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;fillna-&quot;&gt;fillna( )&lt;/h3&gt;
+&lt;p&gt;NaN 값을 다른 값으로 대체&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 1번째 방법&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fillna&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 'Age'칼럼의 NaN값을 평균값으로 대체&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 2번째 방법&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fillna&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inplace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;fillna( )한 결과값을 원본 데이터에 수정하려면 첫번째 방법처럼 반환값을 df[‘Age’]에 다시 정해주거나, 두번째 방법처럼 &lt;code class=&quot;highlighter-rouge&quot;&gt;inplace=True&lt;/code&gt;를 추가해야 원본 데이터가 수정됨&lt;/p&gt;
+
+&lt;h1 id=&quot;apply-lambda로-데이터-가공하기&quot;&gt;apply lambda로 데이터 가공하기&lt;/h1&gt;
+&lt;p&gt;Python의 lambda식을 Pandas DataFrame에 적용한 것&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Name_len'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Name_len'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Name&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Name_len&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Brad Pitt&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Angelina Jolie&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Matt Damon&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;10&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 20세 이상은 'Adult', 20세 미만은 'Child'로 구분하기&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Ageclass'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Adult'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Child'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Ageclass'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Age&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Ageclass&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;42&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Adult&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;17&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Child&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Child&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;29&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Adult&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;61&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Adult&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 61세 이상은 'Elderly', 20~60세는 'Adult', 20세 미만은 'Child'로 구분하기&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Ageclass'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Elderly'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;
+                                &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Adult'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Child'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Ageclass'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;else if&lt;/strong&gt;는 지원하지 않으므로 else절을 ( )로 내포해 ( ) 내에서 다시 if else 적용해야함. 하지만 else if가 필요한 경우나 else절이 많이 필요한 경우에는 따로 별도의 함수를 만드는게 나음. Ageclass를 리턴하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;def get_ageclass(age)&lt;/code&gt; 함수를 만들어서 &lt;code class=&quot;highlighter-rouge&quot;&gt;df['Age'].apply(lambda x: get_ageclass(x))&lt;/code&gt;로 처리&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Age&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Ageclass&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;78&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Elderly&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Child&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;66&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Elderly&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;30&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Adult&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;45&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Adult&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>Rosie Yang</name></author><category term="datascience" /><category term="machinelearning" /><category term="pandas" /><summary type="html">pandas for machine learning</summary></entry><entry><title type="html">Hosting on GitHub pages with Jekyll</title><link href="http://localhost:4000/etc/jekyll/" rel="alternate" type="text/html" title="Hosting on GitHub pages with Jekyll" /><published>2019-10-01T19:34:30+00:00</published><updated>2019-10-01T19:34:30+00:00</updated><id>http://localhost:4000/etc/jekyll</id><content type="html" xml:base="http://localhost:4000/etc/jekyll/">&lt;p&gt;마음에 드는 jekyll theme을 선택하고 터미널에서&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll bundler
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;

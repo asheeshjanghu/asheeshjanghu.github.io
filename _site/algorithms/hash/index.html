@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Hosting on GitHub pages with Jekyll - Rosie’s Devblog</title>
-<meta name="description" content="How to host on github pages with jekyll using minimal mistakes theme">
+<!-- begin _includes/seo.html --><title>Hash - Rosie’s Devblog</title>
+<meta name="description" content="Algorithms Hash">
 
 
   <meta name="author" content="Rosie Yang">
@@ -19,26 +19,26 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Rosie's Devblog">
-<meta property="og:title" content="Hosting on GitHub pages with Jekyll">
-<meta property="og:url" content="http://localhost:4000/etc/jekyll/">
+<meta property="og:title" content="Hash">
+<meta property="og:url" content="http://localhost:4000/algorithms/hash/">
 
 
-  <meta property="og:description" content="How to host on github pages with jekyll using minimal mistakes theme">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2019-10-01T19:34:30+00:00">
+  <meta property="og:description" content="Algorithms Hash">
 
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/etc/jekyll/">
+
+  <meta property="article:published_time" content="2019-10-03T19:34:30+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/algorithms/hash/">
 
 
 
@@ -253,7 +253,7 @@
             
             
 
-            <li><a href="/etc/jekyll/" class="active">Github</a></li>
+            <li><a href="/etc/jekyll/" class="">Github</a></li>
           
         </ul>
         
@@ -267,15 +267,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Hosting on GitHub pages with Jekyll">
-    <meta itemprop="description" content="How to host on github pages with jekyll using minimal mistakes theme">
-    <meta itemprop="datePublished" content="October 01, 2019">
+    <meta itemprop="headline" content="Hash">
+    <meta itemprop="description" content="Algorithms Hash">
+    <meta itemprop="datePublished" content="October 03, 2019">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Hosting on GitHub pages with Jekyll
+          <h1 id="page-title" class="page__title" itemprop="headline">Hash
 </h1>
           
         </header>
@@ -283,24 +283,62 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>마음에 드는 jekyll theme을 선택하고 터미널에서</p>
+        <h1 id="해시">해시</h1>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll bundler
+<h2 id="중복원소-찾기">중복원소 찾기</h2>
+
+<p>A = [a, b, c, a]
+B = [b, c, a]</p>
+
+<p>A엔 있고 B엔 없는 원소 찾아내기 or A원소 중 B에 있는건 빼기 (중복원소 허용.ex)A에 1이 2개있고 B엔 1개만 - 1개만빼줌)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">-</span> <span class="n">Counter</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">answer</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div></div>
 
-<p>이렇게 했는데 자꾸 permission 관련 에러가 떠서</p>
+<ul>
+  <li><code class="highlighter-rouge">Counter(A)</code> = Counter({a: 2, b: 1, c: 1})</li>
+  <li><code class="highlighter-rouge">Counter(B)</code> = Counter({b: 1, c: 1, a: 1})</li>
+  <li><code class="highlighter-rouge">answer</code> = Counter(A) - Counter(B) = Counter({a: 1})</li>
+  <li><code class="highlighter-rouge">answer.keys()</code> = dict_keys([a])</li>
+  <li><code class="highlighter-rouge">list(answer.keys())[0]</code> = a</li>
+</ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo gem install jekyll bundler
+<h2 id="2nd">2nd</h2>
+
+<p>a = 119
+b = 97 674 223
+c = 11 9552 4421
+한 번호가 다른 번호의 접두어인 경우가 있는지 찾기. a는 c의 접두사.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def solution(phone_book):
+    phonebook = sorted(phone_book)
+
+    for p1, p2 in zip(phonebook, phonebook[1:]):
+        if p2.startswith(p1):
+            return True
+    return False
 </code></pre></div></div>
 
-<p>으로 bundler 설치한후에, theme 다운받은 폴더로 이동해서</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec jekyll serve
-</code></pre></div></div>
-
-<p>실행하면 <code class="highlighter-rouge">http://localhost:4000</code>에서 서브된다.</p>
-
-<p>로컬에서 변경사항 확인한 후에 github에 push</p>
+<ul>
+  <li><code class="highlighter-rouge">phone_book</code> = [‘119’, ‘97674223’, ‘1195524421’]</li>
+  <li><code class="highlighter-rouge">phonebook</code> = sorted(phone_book) = [‘119’, ‘1195524421’, ‘97674223’]</li>
+  <li><code class="highlighter-rouge">zip(phonebook, phonebook[1:])</code> = [(‘119’, ‘1195524421’), (‘1195524421’, ‘97674223’)]
+    <ul>
+      <li>zip([a, b, c], [e, f]) = [(a, e), (b, f)]</li>
+      <li>zip([a, b, c, d], [b, c, d]) = [(a, b), (b, c), (c, d)]</li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>a = “Hello World”</li>
+      <li>a.startswith(“Hello”) -&gt; True</li>
+    </ul>
+  </li>
+</ul>
 
         
       </section>
@@ -321,15 +359,15 @@
     
       
       
-      <a href="/tags/#githubpage" class="page__taxonomy-item" rel="tag">githubpage</a><span class="sep">, </span>
+      <a href="/tags/#algorithms" class="page__taxonomy-item" rel="tag">algorithms</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#github" class="page__taxonomy-item" rel="tag">github</a><span class="sep">, </span>
+      <a href="/tags/#datastructures" class="page__taxonomy-item" rel="tag">datastructures</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#jekyll" class="page__taxonomy-item" rel="tag">jekyll</a>
+      <a href="/tags/#programming" class="page__taxonomy-item" rel="tag">programming</a>
     
     </span>
   </p>
@@ -350,14 +388,14 @@
     
       
       
-      <a href="/categories/#etc" class="page__taxonomy-item" rel="tag">etc</a>
+      <a href="/categories/#algorithms" class="page__taxonomy-item" rel="tag">algorithms</a>
     
     </span>
   </p>
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-10-01T19:34:30+00:00">October 01, 2019</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-10-03T19:34:30+00:00">October 03, 2019</time></p>
         
       </footer>
 
@@ -366,11 +404,11 @@
       
   <nav class="pagination">
     
-      <a href="/ml/scikitlearn/" class="pagination--pager" title="Scikit-learn for Machine Learning
+      <a href="/ml/datavisualization/" class="pagination--pager" title="Data Visualization
 ">Previous</a>
     
     
-      <a href="/ml/pandas/" class="pagination--pager" title="Pandas for Machine Learning
+      <a href="/hr-datastructures/arrays/" class="pagination--pager" title="Arrays
 ">Next</a>
     
   </nav>
@@ -415,26 +453,6 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/algorithms/hash/" rel="permalink">Hash
-</a>
-      
-    </h2>
-    
-    <p class="archive__item-excerpt" itemprop="description">Algorithms Hash
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
         <a href="/ml/datavisualization/" rel="permalink">Data Visualization
 </a>
       
@@ -461,6 +479,26 @@
     </h2>
     
     <p class="archive__item-excerpt" itemprop="description">pandas for machine learning
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/etc/jekyll/" rel="permalink">Hosting on GitHub pages with Jekyll
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">How to host on github pages with jekyll using minimal mistakes theme
 </p>
   </article>
 </div>
@@ -538,8 +576,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/etc/jekyll/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/etc/jekyll"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "http://localhost:4000/algorithms/hash/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/algorithms/hash"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
