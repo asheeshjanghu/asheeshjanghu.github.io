@@ -324,7 +324,7 @@
       <section class="page__content" itemprop="text">
         
         <p class="notice--warning"><strong>Pandas:</strong> Python에서 데이터처리를 위해 존재하는 가장 인기있는 라이브러리.
-2차원 데이터를 효율적으로 가공/처리할 수 있는 다양하고 훌륭한 기능을 제공</p>
+2차원 데이터를 효율적으로 가공/처리할 수 있는 다양하고 훌륭한 기능을 제공합니다. Pandas에서 다루는 범위가 너무 넓기 때문에, 이 튜토리얼의 기본적인 사항만 숙지하고 나머지는 실무에서 필요한 것이 생길때마다 그때 그때 배워가는 것이 좋은 방법입니다.</p>
 
 <h2 id="pandas의-핵심-객체--dataframe">Pandas의 핵심 객체 = DataFrame</h2>
 <ul>
@@ -537,7 +537,7 @@
   <li>열 : 칼럼명 or 칼럼 index값</li>
 </ul>
 
-<p class="notice--danger"><strong>주의:</strong> 칼럼명과 칼럼의 index값 두개가 혼용되어 ix 연산자는 곧 사라지고, loc[ ]과 iloc[ ]으로 나뉘어짐. 혼동을 줄이기 위해 loc[ ], iloc[ ] 중 하나만 사용하는 것이 좋음. (내생각: 되도록이면 loc[ ]으로 통일하는게 깔끔해보임)</p>
+<p class="notice--danger">칼럼명과 칼럼의 index값 두개가 혼용되어 ix 연산자는 곧 사라지고, loc[ ]과 iloc[ ]으로 나뉘어짐. 혼동을 줄이기 위해 loc[ ], iloc[ ] 중 하나만 사용하는 것이 좋음. (내생각: 되도록이면 loc[ ]으로 통일하는게 깔끔해보임)</p>
 
 <h3 id="iloc--연산자--칼럼-위치position-기반-인덱싱">iloc[ ] 연산자 : 칼럼 <em>위치</em>(position) 기반 인덱싱</h3>
 <ul>
@@ -561,7 +561,7 @@
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s">'Name'</span><span class="p">]</span>   <span class="c"># 1,2번째 행의 'Name'열 값 (1:2는 1,2 모두 포함)</span>
 </code></pre></div></div>
 
-<p class="notice--danger"><strong>주의:</strong> loc[ ]에서 슬라이싱은 ‘시작값부터 종료값-1’ 까지가 아니라 ‘시작값부터 종료값’까지임! 명칭을 기반으로 인덱싱을 하는데 명칭은 숫자형이 아닐 수도 있어서 -1을 할 수 없기 때문.</p>
+<p class="notice--danger">loc[ ]에서 슬라이싱은 ‘시작값부터 종료값-1’ 까지가 아니라 ‘시작값부터 종료값’까지임! 명칭을 기반으로 인덱싱을 하는데 명칭은 숫자형이 아닐 수도 있어서 -1을 할 수 없기 때문.</p>
 
 <h3 id="boolean-indexing">Boolean Indexing</h3>
 <ul>
@@ -845,7 +845,7 @@
 <span class="n">df</span><span class="p">[[</span><span class="s">'Age'</span><span class="p">,</span> <span class="s">'Ageclass'</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p class="notice--warning"><strong>else if</strong>는 지원하지 않으므로 else절을 ( )로 내포해 ( ) 내에서 다시 if else 적용해야함. 하지만 else if가 필요한 경우나 else절이 많이 필요한 경우에는 따로 별도의 함수를 만드는게 나음. Ageclass를 리턴하는 <code class="highlighter-rouge">def get_ageclass(age)</code> 함수를 만들어서 <code class="highlighter-rouge">df['Age'].apply(lambda x: get_ageclass(x))</code>로 처리</p>
+<p class="notice--info"><strong>else if</strong>는 지원하지 않으므로 else절을 ( )로 내포해 ( ) 내에서 다시 if else 적용해야함. 하지만 else if가 필요한 경우나 else절이 많이 필요한 경우에는 따로 별도의 함수를 만드는게 나음. Ageclass를 리턴하는 <code class="highlighter-rouge">def get_ageclass(age)</code> 함수를 만들어서 <code class="highlighter-rouge">df['Age'].apply(lambda x: get_ageclass(x))</code>로 처리</p>
 
 <table>
   <thead>

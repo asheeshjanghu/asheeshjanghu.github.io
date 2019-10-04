@@ -15,7 +15,7 @@ var store = [{
         "url": "http://localhost:4000/etc/jekyll/",
         "teaser":null},{
         "title": "Pandas for Machine Learning",
-        "excerpt":"Pandas: Python에서 데이터처리를 위해 존재하는 가장 인기있는 라이브러리. 2차원 데이터를 효율적으로 가공/처리할 수 있는 다양하고 훌륭한 기능을 제공 Pandas의 핵심 객체 = DataFrame 여러 개의 행과 열로 이뤄진 2차원 데이터를 담는 데이터 구조체 Index : 개별 데이터를 고유하게 식별하는 key값. Series, DataFrame은 모두 Index를 key값으로 가지고 있습니다. Series : 열이...","categories": ["ml"],
+        "excerpt":"Pandas: Python에서 데이터처리를 위해 존재하는 가장 인기있는 라이브러리. 2차원 데이터를 효율적으로 가공/처리할 수 있는 다양하고 훌륭한 기능을 제공합니다. Pandas에서 다루는 범위가 너무 넓기 때문에, 이 튜토리얼의 기본적인 사항만 숙지하고 나머지는 실무에서 필요한 것이 생길때마다 그때 그때 배워가는 것이 좋은 방법입니다. Pandas의 핵심 객체 = DataFrame 여러 개의 행과 열로 이뤄진...","categories": ["ml"],
         "tags": ["datascience","machinelearning","pandas"],
         "url": "http://localhost:4000/ml/pandas/",
         "teaser":null},{

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-04T05:14:48+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rosie’s Devblog</title><subtitle>Hi, I'm a data scientist and this is my personal blog about Data Science.</subtitle><author><name>Rosie Yang</name></author><entry><title type="html">Hash</title><link href="http://localhost:4000/algorithms/hash/" rel="alternate" type="text/html" title="Hash" /><published>2019-10-03T19:34:30+00:00</published><updated>2019-10-03T19:34:30+00:00</updated><id>http://localhost:4000/algorithms/hash</id><content type="html" xml:base="http://localhost:4000/algorithms/hash/">&lt;h1 id=&quot;해시&quot;&gt;해시&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-04T05:20:32+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rosie’s Devblog</title><subtitle>Hi, I'm a data scientist and this is my personal blog about Data Science.</subtitle><author><name>Rosie Yang</name></author><entry><title type="html">Hash</title><link href="http://localhost:4000/algorithms/hash/" rel="alternate" type="text/html" title="Hash" /><published>2019-10-03T19:34:30+00:00</published><updated>2019-10-03T19:34:30+00:00</updated><id>http://localhost:4000/algorithms/hash</id><content type="html" xml:base="http://localhost:4000/algorithms/hash/">&lt;h1 id=&quot;해시&quot;&gt;해시&lt;/h1&gt;
 
 &lt;h2 id=&quot;중복원소-찾기&quot;&gt;중복원소 찾기&lt;/h2&gt;
 
@@ -214,7 +214,7 @@ ax2.scatter(x, y)
     &lt;p&gt;&lt;img src=&quot;https://matplotlib.org/_images/sphx_glr_subplots_demo_003.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Rosie Yang</name></author><category term="datascience" /><category term="machinelearning" /><category term="datavisualization" /><category term="matplotlib" /><category term="seaborn" /><summary type="html">Data visualization for machine learning</summary></entry><entry><title type="html">Pandas for Machine Learning</title><link href="http://localhost:4000/ml/pandas/" rel="alternate" type="text/html" title="Pandas for Machine Learning" /><published>2019-10-02T16:00:00+00:00</published><updated>2019-10-02T16:00:00+00:00</updated><id>http://localhost:4000/ml/pandas</id><content type="html" xml:base="http://localhost:4000/ml/pandas/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;Pandas:&lt;/strong&gt; Python에서 데이터처리를 위해 존재하는 가장 인기있는 라이브러리.
-2차원 데이터를 효율적으로 가공/처리할 수 있는 다양하고 훌륭한 기능을 제공&lt;/p&gt;
+2차원 데이터를 효율적으로 가공/처리할 수 있는 다양하고 훌륭한 기능을 제공합니다. Pandas에서 다루는 범위가 너무 넓기 때문에, 이 튜토리얼의 기본적인 사항만 숙지하고 나머지는 실무에서 필요한 것이 생길때마다 그때 그때 배워가는 것이 좋은 방법입니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;pandas의-핵심-객체--dataframe&quot;&gt;Pandas의 핵심 객체 = DataFrame&lt;/h2&gt;
 &lt;ul&gt;
@@ -427,7 +427,7 @@ ax2.scatter(x, y)
   &lt;li&gt;열 : 칼럼명 or 칼럼 index값&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;주의:&lt;/strong&gt; 칼럼명과 칼럼의 index값 두개가 혼용되어 ix 연산자는 곧 사라지고, loc[ ]과 iloc[ ]으로 나뉘어짐. 혼동을 줄이기 위해 loc[ ], iloc[ ] 중 하나만 사용하는 것이 좋음. (내생각: 되도록이면 loc[ ]으로 통일하는게 깔끔해보임)&lt;/p&gt;
+&lt;p class=&quot;notice--danger&quot;&gt;칼럼명과 칼럼의 index값 두개가 혼용되어 ix 연산자는 곧 사라지고, loc[ ]과 iloc[ ]으로 나뉘어짐. 혼동을 줄이기 위해 loc[ ], iloc[ ] 중 하나만 사용하는 것이 좋음. (내생각: 되도록이면 loc[ ]으로 통일하는게 깔끔해보임)&lt;/p&gt;
 
 &lt;h3 id=&quot;iloc--연산자--칼럼-위치position-기반-인덱싱&quot;&gt;iloc[ ] 연산자 : 칼럼 &lt;em&gt;위치&lt;/em&gt;(position) 기반 인덱싱&lt;/h3&gt;
 &lt;ul&gt;
@@ -451,7 +451,7 @@ ax2.scatter(x, y)
 &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 1,2번째 행의 'Name'열 값 (1:2는 1,2 모두 포함)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;주의:&lt;/strong&gt; loc[ ]에서 슬라이싱은 ‘시작값부터 종료값-1’ 까지가 아니라 ‘시작값부터 종료값’까지임! 명칭을 기반으로 인덱싱을 하는데 명칭은 숫자형이 아닐 수도 있어서 -1을 할 수 없기 때문.&lt;/p&gt;
+&lt;p class=&quot;notice--danger&quot;&gt;loc[ ]에서 슬라이싱은 ‘시작값부터 종료값-1’ 까지가 아니라 ‘시작값부터 종료값’까지임! 명칭을 기반으로 인덱싱을 하는데 명칭은 숫자형이 아닐 수도 있어서 -1을 할 수 없기 때문.&lt;/p&gt;
 
 &lt;h3 id=&quot;boolean-indexing&quot;&gt;Boolean Indexing&lt;/h3&gt;
 &lt;ul&gt;
@@ -735,7 +735,7 @@ ax2.scatter(x, y)
 &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Ageclass'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;else if&lt;/strong&gt;는 지원하지 않으므로 else절을 ( )로 내포해 ( ) 내에서 다시 if else 적용해야함. 하지만 else if가 필요한 경우나 else절이 많이 필요한 경우에는 따로 별도의 함수를 만드는게 나음. Ageclass를 리턴하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;def get_ageclass(age)&lt;/code&gt; 함수를 만들어서 &lt;code class=&quot;highlighter-rouge&quot;&gt;df['Age'].apply(lambda x: get_ageclass(x))&lt;/code&gt;로 처리&lt;/p&gt;
+&lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;else if&lt;/strong&gt;는 지원하지 않으므로 else절을 ( )로 내포해 ( ) 내에서 다시 if else 적용해야함. 하지만 else if가 필요한 경우나 else절이 많이 필요한 경우에는 따로 별도의 함수를 만드는게 나음. Ageclass를 리턴하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;def get_ageclass(age)&lt;/code&gt; 함수를 만들어서 &lt;code class=&quot;highlighter-rouge&quot;&gt;df['Age'].apply(lambda x: get_ageclass(x))&lt;/code&gt;로 처리&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
