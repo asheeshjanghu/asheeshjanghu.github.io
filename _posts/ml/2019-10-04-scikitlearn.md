@@ -10,7 +10,7 @@ sidebar:
   nav: "Data Science"
 ---
 
-**Scikit-learn:** Python 머신러닝 라이브러리 중 가장 많이 사용되는 라이브러리. 
+**Scikit-learn:** Python 머신러닝 라이브러리 중 가장 많이 사용되는 라이브러리
 {: .notice--warning}
 
 ```python
@@ -38,7 +38,7 @@ clf.fit(X_train, y_train)
 pred = clf.predict(X_test)
 
 # 4. 평가
-print(accuracy_score(y_test, pred))
+acc = accuracy_score(y_test, pred)
 ```
 
 ### 비지도학습
@@ -150,3 +150,93 @@ mean_acc = np.mean(accs)
 ```
 
 ## Stratified K폴드
+- label집합에서 특정 label값이 특이하게 많거나 매우 적어서 **분포가 불균형**한 데이터를 위한 K폴드 방식
+- 원본 데이터의 label 분포도에 따라 데이터셋 나눔 (원본과 유사한 분포를 Train/Test셋에도 유지)
+- 각 label당 데이터갯수가 완벽히 똑같지 않은 이상, 반드시 Stratified K폴드를 이용해 교차검증해야 함
+- 회귀에서는 Stratified K폴드 지원하지 않음 (회귀의 결정값은 연속된 숫자값이라 분포를 정하는 의미가 없으니까)
+
+```python
+from sklearn.model_selection import StratifiedKFold
+
+skf = StratifiedKFold(n_splits=5)
+skf.split(X, y)   
+```
+
+y값 분포도에 따라 데이터 나누니까 `split()` 인자로 X와 함께 y도 입력해줘야 함 (K폴드에선 `split(X)`만 입력해도 됨)
+{: .notice--warning}
+
+## cross_val_score( )
+```python
+from sklearn.model_selection import cross_val_score
+
+scores = cross_val_score(estimator, feature, label, scoring='accuracy', cv=5)
+
+>>> np.round(scores, 4)   # cv 갯수만큼 평가지표를 리스트로 반환 
+[0.9901 0.9120 0.9533 0.9854 0.9397] 
+>>> np.round(np.mean(scores), 4)   # 주로 평균값을 평가 수치로 사용
+0.9561
+```
+
+- `estimator`
+  - Classifier : **Stratified K폴드** 방식으로.
+  - Regressor : 회귀엔 Stratified K폴드 적용 못하니까 **K폴드**로.
+- `scoring` : 성능 평가지표
+- `cv` : 교차검증 폴드 수
+
+
+# GridSearchCV
+교차검증과 최적의 Hyperparameter 튜닝을 한번에.
+
+- Hyperparameter를 순차적으로 바꿔가면서 최고의 성능을 가지는 파라미터 조합을 찾을 수 있음
+- Grid=격자 → 촘촘하게 파라미터를 입력하면서 테스트를 하는 방식
+
+```python
+from sklearn.model_selection import GridSearchCV
+
+params = {'kernel':('linear', 'rbf', 'poly'),
+          'C':[1, 10]}
+
+grid = GridSearchCV(clf, param_grid=params, cv=3, refit=True)
+```
+
+GridSearchCV는
+- cross-validation을 위한 Train/Test셋을 자동으로 분할한 뒤에
+- 그리드에 기술된 모든 parameter를 순차적으로 바꿔가며 6회에 걸쳐 교차검증하며 성능측정
+  - `kernel` 3개 x `C` 2개 = 6회
+  - if CV=3 → 6 * 3 = 18회의 학습/평가가 이루어짐
+
+#### GridSearchCV(estimator, param_grid, scoring, cv, refit)
+- `param_grid` : 'key : 리스트' 값을 가지는 딕셔너리
+- `scoring` : 성능 측정방법
+- `cv` : 교차검증을 위한 폴드 수
+- `refit` : 기본값=True → 가장 최적의 hyperparameter를 찾은 후 그걸로 재학습시킴
+
+```python
+# params들을 순차적으로 학습&평가
+grid.fit(X_train, y_train)
+
+# 최고 성능인 hyperparameter값
+>>> grid.best_params_
+{'kernel': 'rbf', 'C': 10}
+
+# 최고 성능일 때의 평가 결과값
+>>> grid.best_score_
+0.9782
+
+# GridSearchCV 결과를 추출해 DataFrame으로 변환
+scores = pd.DataFrame(grid.cv_results_)
+
+# 최적의 estimator로 테스트셋에 예측해보기
+estimator = grid.best_estimator_
+pred = estimator.predict(X_test)   # refit으로 이미 학습됐으므로 fit 또 안해도됨
+```
+
+#### `cv_results_`
+GridSearchCV의 결과 세트. key값과 리스트 형태의 value값 가진 딕셔너리 형태.
+- `rank_test_score` : hyperparameter별로 성능이 좋은 score 순위. 1일 때가 최적.
+- `mean_test_score` : 개별 hyperparameter별로 폴딩 테스트셋에 대한 평가 평균값
+
+GridSearchCV로 Train셋에 최적 hyperparameter 튜닝을 한 뒤에, Test셋에 적용하기!
+{: .notice--info}
+
+
