@@ -152,8 +152,9 @@ mean_acc = np.mean(accs)
 ## Stratified K폴드
 - label집합에서 특정 label값이 특이하게 많거나 매우 적어서 **분포가 불균형**한 데이터를 위한 K폴드 방식
 - 원본 데이터의 label 분포도에 따라 데이터셋 나눔 (원본과 유사한 분포를 Train/Test셋에도 유지)
+  - ex) 원본 데이터의 label값이 0 or 1인데, 1이 전체의 5%인 경우,
+  - 폴드를 나눴을 때 각 폴드에도 1이 5%만큼 있도록 폴드를 나눔
 - 각 label당 데이터갯수가 완벽히 똑같지 않은 이상, 반드시 Stratified K폴드를 이용해 교차검증해야 함
-- 회귀에서는 Stratified K폴드 지원하지 않음 (회귀의 결정값은 연속된 숫자값이라 분포를 정하는 의미가 없으니까)
 
 ```python
 from sklearn.model_selection import StratifiedKFold
@@ -180,6 +181,7 @@ scores = cross_val_score(estimator, feature, label, scoring='accuracy', cv=5)
 - `estimator`
   - Classifier : **Stratified K폴드** 방식으로.
   - Regressor : 회귀엔 Stratified K폴드 적용 못하니까 **K폴드**로.
+    - 회귀의 결정값은 연속된 숫자값이라 분포를 정하는 의미가 없어서 Stratified K폴드를 지원X
 - `scoring` : 성능 평가지표
 - `cv` : 교차검증 폴드 수
 
@@ -231,7 +233,7 @@ estimator = grid.best_estimator_
 pred = estimator.predict(X_test)   # refit으로 이미 학습됐으므로 fit 또 안해도됨
 ```
 
-#### `cv_results_`
+### `cv_results_`
 GridSearchCV의 결과 세트. key값과 리스트 형태의 value값 가진 딕셔너리 형태.
 - `rank_test_score` : hyperparameter별로 성능이 좋은 score 순위. 1일 때가 최적.
 - `mean_test_score` : 개별 hyperparameter별로 폴딩 테스트셋에 대한 평가 평균값
