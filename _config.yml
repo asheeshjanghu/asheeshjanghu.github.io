@@ -1,7 +1,7 @@
-title: Rosie's Devblog
-email: rosie.junghwa@gmail.com
-description: Hi, I'm a data scientist and this is my personal blog about Data Science.
-github_username: rosiejh
+title: Asheesh Devblog
+email: asheeshjanghu@gmail.com
+description: Hi, I'm a backend engineer and this is my personal blog about backend development.
+github_username: asheeshjanghu
 minimal_mistakes_skin: default
 search: true
 logo: "/assets/images/star.ico"
@@ -27,9 +27,9 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Rosie Yang"
-  avatar : "/assets/images/rosie.jpg"
-  bio    : "Data Scientist👩🏻‍💻"
+  name   : "Asheesh Janghu"
+  avatar : "/assets/images/asheeshProfile.jpg"
+  bio    : "Backend Engineer"
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"

@@ -1,12 +1,12 @@
 main:
   - title: "Projects"
     url: /projects/
-  - title: "Data Science"
-    url: /datascience/
-  - title: "Programming"
-    url: /programming/
-  - title: "Studylog"
-    url: /studylog/
+  - title: "Nodejs"
+    url: /nodejs/
+  - title: "JavaScript"
+    url: /javasctipt/
+  - title: "Examples"
+    url: /examples/
 
 Data Science:
   - title: Machine Learning

@@ -1,10 +1,10 @@
 ---
-title: "Data Science"
-permalink: /datascience/
+title: "Nodejs"
+permalink: /nodejs/
 author_profile: false
 classes: wide
 sidebar:
-  nav: "Data Science"
+  nav: "Nodejs"
 ---
 - Machine Learning
 - Deep Learning

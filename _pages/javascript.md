@@ -1,13 +1,13 @@
 ---
-title: "Programming"
-permalink: /programming/
+title: "JavaScript"
+permalink: /javascript/
 author_profile: false
 classes: wide
 sidebar:
-  nav: "Programming"
+  nav: "JavaScript"
 ---
 
-# Python
+# JavaScript
 python
 
 # Algorithms

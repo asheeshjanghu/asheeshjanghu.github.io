@@ -1,6 +1,6 @@
 ---
 title: "How I've taught myself"
-permalink: /studylog/
+permalink: /examples/
 author_profile: true
 classes: wide
 ---
@@ -9,7 +9,7 @@ classes: wide
 
 처음부터 Data science를 공부했던 건 아니고, python으로 프로그래밍 기초를 취미로 공부했는데, 너무 재밌어서 공부하다 보니 Data science까지 공부하게 된 케이스다. 코딩을 좋아하는데 수학과 통계까지 좋아한다면 Data science를 공부하기 최고의 조건이 아닐까 싶다.
 
-## #1. Python & Algorithms
+## #1.Simple Project to get Started
 '수학을 좋아하는 내가 코딩을 배워서 코딩까지 잘하게 되면 Data science를 공부해봐도 되겠다'싶은 마음에 공부할 첫 프로그래밍 언어를 고민없이 python으로 정했다.
 '**Life is short, you need Python.**'이란 말이 모든 걸 말해주듯, Python-간결함=0 이다. 정말 간단하고, 그냥 영어 문장을 읽듯 python을 모르는 사람이 봐도 어떤 코드인지 알만큼 문법이 간단하다. 같은 알고리즘 문제를 풀 때도, 다른 언어로는 몇십줄의 코드가 필요한데, python으로는 단 몇 줄로 끝난다.
 
